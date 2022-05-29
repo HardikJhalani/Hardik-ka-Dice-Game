@@ -9,12 +9,13 @@
 html {
   font-size: 62.5%;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 body {
   font-family: 'Nunito', sans-serif;
   font-weight: 400;
-  height: 100vh;
+  min-height: 100vh;
   color: #333;
   background-image: linear-gradient(to top left, #753682 0%, #bf2e34 100%);
   display: flex;
@@ -22,6 +23,16 @@ body {
   justify-content: center;
   gap: 4rem;
   /* position: relative; */
+}
+
+@media (max-width: 500px) {
+  body {
+    flex-direction: column;
+  }
+
+  html {
+    font-size: 45%;
+  }
 }
 
 input,
@@ -43,6 +54,15 @@ main {
   display: flex;
 }
 
+@media (max-width: 500px) {
+  main {
+    flex-direction: column;
+    margin-top: 8rem;
+    width: 80vw;
+    height: 65%;
+  }
+}
+
 .players {
   position: relative;
   width: 40rem;
@@ -58,6 +78,14 @@ main {
   justify-content: center;
   align-items: center;
   gap: 1rem;
+}
+
+@media (max-width: 500px) {
+  .players {
+    width: 80vw;
+    height: 27vh;
+    gap: 0.7rem;
+  }
 }
 
 .players h3 {
@@ -98,6 +126,12 @@ main {
   flex-direction: column;
   align-items: center;
   transition: all 0.75s;
+}
+
+@media (max-width: 500px) {
+  .player {
+    padding: 6rem;
+  }
 }
 
 /* ELEMENTS */
@@ -156,6 +190,22 @@ main {
   font-size: 3.5rem;
 }
 
+@media (max-width: 500px) {
+  .current {
+    width: 60%;
+    padding: 1.3rem;
+  }
+
+  .current-label {
+    font-size: 2.2rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .current-score {
+    font-size: 3.8rem;
+  }
+}
+
 /* ABSOLUTE POSITIONED ELEMENTS */
 .btn {
   position: absolute;
@@ -186,6 +236,14 @@ main {
   margin-right: 0.7rem;
 }
 
+@media(max-width: 500px) {
+  .btn::first-letter {
+    font-size: 2rem;
+    margin-right: 0.5rem;
+  }
+}
+
+
 .btn--new {
   top: 4rem;
 }
@@ -196,6 +254,36 @@ main {
 
 .btn--hold {
   top: 46.1rem;
+}
+
+@media (max-width: 500px) {
+  .btn--new {
+    top: 0.5rem;
+  }
+
+  .btn--roll {
+    top: 50%;
+    transform: translate(-140%, -50%);
+    font-size: 1.5rem;
+    padding: 0.5rem 1.4rem;
+    /* left: 10rem; */
+  }
+
+  .btn--roll::first-letter {
+    font-size: 1.8rem;
+  }
+
+  .btn--hold {
+    top: 50%;
+    font-size: 1.5rem;
+    padding: 0.5rem 1.4rem;
+    transform: translate(40%, -50%);
+    width: 14rem;
+  }
+
+  .btn--hold::first-letter {
+    font-size: 1.8rem;
+  }
 }
 
 .btn:active {
@@ -214,6 +302,13 @@ main {
   transform: translateX(-50%);
   height: 10rem;
   box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 500px) {
+  .dice {
+    top: 37.3rem;
+    height: 7rem;
+  }
 }
 
 .player--winner {
@@ -238,6 +333,14 @@ main {
   z-index: 10;
 }
 
+@media (max-width: 500px) {
+  .overlay {
+    height: 84%;
+    width: 100%;
+    top: 0%;
+  }
+}
+
 .guide {
   position: absolute;
   width: 145rem;
@@ -247,6 +350,15 @@ main {
   border-radius: 9px;
   z-index: 20;
   padding: 3rem;
+}
+
+@media (max-width: 500px) {
+  .guide {
+    width: 100%;
+    height: 79%;
+    top: 6.5%;
+    padding: 1.4rem;
+  }
 }
 
 .guide h3 span {
@@ -281,6 +393,13 @@ main {
   font-size: 2.2rem;
 }
 
+@media (max-width: 500px) {
+  .guide .rules {
+    padding-left: 4rem;
+    margin-top: 19rem;
+  }
+}
+
 .guide .rules span {
   color: white;
 }
@@ -289,6 +408,15 @@ main {
   display: flex;
   margin-top: 5rem;
   margin-left: 30rem;
+}
+
+@media (max-width: 500px) {
+  .guide .start {
+    margin-left: 15rem;
+    margin-top: 1rem;
+    text-align: center;
+    width: 125px;
+  }
 }
 
 .rules {
