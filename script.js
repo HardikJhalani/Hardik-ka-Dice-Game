@@ -157,4 +157,4 @@ const reset = function () {
     player2InputName.value = "";
 }
 
-buttonNew.addEventListener('click', reset)
+buttonNew.addEventListener('click', reset);
